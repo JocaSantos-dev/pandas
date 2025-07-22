@@ -533,6 +533,7 @@ def test_array_to_numpy_na():
 
 
 def test_array_max_min():
+    pytest.importorskip("pyarrow")
     # GH#61311
     df = pd.DataFrame({"a": [1, 2], "c": [0, 2], "d": ["c", "a"]})
     expected = df.iloc[:, df["c"]]
